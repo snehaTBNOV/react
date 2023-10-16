@@ -1,0 +1,150 @@
+es6(2015) is one of the versions  of js
+react has large scale libraries and u acn make bigger application with ease
+
+es6 features
+
+variable creation using let and const
+rest and sprea op
+arrow fun
+map(),reduce(),filter(),find( findindex())
+destructuring
+classes prop methods
+promises
+template strings
+
+react is a js libarary to build interactive user interfaces
+indep,isoalted,reusable components
+eg:fb,netflix,instagram,twitter
+
+here when u clcik multi nav bar it wont reload.
+react is a single page app tht renders insiadea browser and doesn't require reloadingeg:faceook 
+when u click dropdown it doesn't needs to refresh teh page to fetch data bcz all the required data is alaready present
+based on the url u see the data.
+
+library--furniture
+framework-entire house
+
+react app structure
+app  (topbar adsection grid)
+u should connect with this app component. app is the parent 
+
+install node js
+
+packages like validator are created by some dev which we are not concerned about . we can use isemail ,isBoolean(str [, options]) like many
+
+npx create-next-app firstapp
+
+NODE MODULES-------
+this will crete all necessary modules ,packages.so packages and codes for all packages are stored in node modules
+
+open https://www.npmjs.com/--search avliadtor 
+npm i validator  node package manager install 
+this installed validator is under node modules ,if u see the index.js u can see the code for validator
+
+.GITIGNORE --------------
+it has code tht can't pushed into GIT
+
+package json------------------------
+it has dependencies like react,validator,react dom,next package
+and it has aname of teh app
+
+package lock json is ellboarated version of above
+
+if u delete node modules, then use npm installer in terminal . so it will cretate again . so package .json consistes packages. u can rebuilt everything . transfering will be easy 
+
+
+app is the most important block in react .
+it can be visbile under src--->pages-->api-->index.js
+
+our new file should be linked to this index.js (app)
+
+to start the project ,npm run dev
+
+go to index.js..remember home ()
+any custom compeonnet name should start with cap letter
+
+bable.js responsible for converting html to js
+
+
+HTML
+<ol id="demo"></ol>
+Vanilla JavaScript
+var firstName = “John”
+var list= document.getElementById(demo).value;
+var entry = document.createElement('li');
+entry.appendChild(document.createTextNode(firstName));
+list.appendChild(entry);
+JSX
+<ol><li>{firstname}</li></ol>
+
+
+Everything in react is a compeonnet
+it uses viertual dom
+
+How do you access a function fetch() from a h1 element in JSX?
+<h1>{fetch()}</h1>
+
+style={{fontSize:'12px',color:'red'}}
+
+
+react app with next helps to give us the template,packages.dont need to create /configure
+Component-Based Architecture: React follows a component-based architecture, which allows you to break down your user interface into small, reusable components. This promotes code reusability and maintainability. Components can be composed together to create complex UIs,
+
+Virtual DOM (Document Object Model): React uses a Virtual DOM to improve performance. Instead of directly manipulating the real DOM (which can be slow and resource-intensive), React creates a lightweight copy of the DOM in memory. When changes occur, React compares the Virtual DOM with the real DOM and only updates the parts that have changed, minimizing unnecessary re-renders and improving application performance.
+
+Unidirectional Data Flow: React enforces a unidirectional data flow, which means data flows in one direction, typically from parent to child components. This pattern makes it easier to understand and debug how data changes affect your application, as you can trace the flow of data and state changes more easily.
+
+Declarative Syntax: React uses a declarative syntax to describe how the UI should look based on the application's current state. Instead of manually manipulating the DOM to update the UI, you specify what the UI should look like for each state, and React takes care of rendering the appropriate updates. This simplifies UI development and makes it more predictable.
+
+Large and Active Community: React has a vast and active community of developers, which means you can find a wealth of resources, libraries, and tools to help you build and maintain your projects. It's backed by Facebook and used by many other major companies, ensuring its long-term stability and support.
+
+
+
+React and Angular are both popular JavaScript frameworks (or libraries, in React's case) for building web applications, but they have some fundamental differences in terms of architecture, syntax, and philosophy. Here's a comparison of React and Angular:
+
+Architecture:
+
+React: React is a JavaScript library for building user interfaces. It focuses primarily on the view layer of the application. React applications are typically composed of multiple small, reusable components. Developers have flexibility in choosing other libraries and tools (such as Redux for state management) to complement React's capabilities.
+
+Angular: Angular is a comprehensive front-end framework developed and maintained by Google. It provides a full-featured framework for building web applications. Angular applications follow the Model-View-Controller (MVC) architecture, where Angular itself handles many aspects of the application, including routing, form handling, and state management.
+
+Language and Syntax:
+
+React: React uses JSX (JavaScript XML) for defining component templates. JSX is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript files. React components are typically written in JavaScript or TypeScript.
+
+Angular: Angular uses a templating language that combines HTML templates with Angular-specific directives and syntax. This approach keeps the HTML and JavaScript code separate, but it requires learning Angular-specific syntax.
+
+Data Binding:
+
+React: React primarily uses one-way data binding. Data flows from parent to child components, and changes in child components do not directly affect parent components. This can make it more predictable and easier to debug.
+
+Angular: Angular supports both one-way and two-way data binding. Two-way binding allows for automatic synchronization of data between the view and the component, but it can sometimes lead to more complex behavior.
+
+Learning Curve:
+
+React: React is known for its relatively shallow learning curve, especially for developers already familiar with JavaScript and JSX. It's easy to get started and gradually build more complex applications.
+
+Angular: Angular has a steeper learning curve due to its comprehensive feature set and its own set of concepts and terminology. Developers may need more time to become proficient in Angular.
+
+Community and Ecosystem:
+
+React: React has a large and active community with a rich ecosystem of libraries, tools, and resources. Developers can choose from a variety of state management libraries (e.g., Redux, Mobx) and routing solutions.
+
+Angular: Angular also has a strong community and ecosystem, with many built-in features and official packages for various needs, such as routing, forms, and HTTP handling.
+
+Size and Performance:
+
+React: React itself is lightweight, and the use of a Virtual DOM contributes to efficient rendering. However, the final bundle size can depend on the additional libraries and tools you choose to use.
+
+Angular: Angular applications tend to have a larger bundle size due to the framework's comprehensive nature. Angular's Ahead-of-Time (AOT) compilation can help optimize performance and reduce the bundle size.
+
+
+state in raect is handle compenoent 
+Default port where webpack-server will run 8080
+react is both server and client side netwrk
+babel is compiler and tranpiler
+data in raect acn be handled via states/props
+state is mutable
+props is read aonly and immuatble
+css module has unique name sand no name clashes
+

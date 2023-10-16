@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    //array function map(),reduce(),filter()
+
+//map-------------------------------------------
+//     let arr=[1,2,3,4,5]
+// //map parameters hav 4 values. u can use whtever u want . but item anad index is used commonly
+// arr.map((item,index)=>{
+//     console.log(item,index)
+// })
+
+// $.get('https://dummyjson.com/products',(res)=>{
+//     let products=res.products
+//     let container=document.getElementById('container')
+//     container.innerHTML+=products.map(item=> `<h1>${item.title}</h1>`)
+// })
+
+//filter-----------------------------------
+// let arr1=[6,7,39,9,5,6,3,5,30,21,15]
+// let resu=arr1.filter(item=>item % 3==0)
+// console.log(resu)
+
+// //if u want to filter out products<3000 dollar
+
+// $.get('https://dummyjson.com/posts',(res)=>{
+//     let posts=res.posts
+//     let container =document.getElementById('container')
+//     container.innerHTML+=posts.map(item=> `<h1>${item.title}</h1>`)
+//     $.get('https://dummyjson.com/products',(res)=>{
+//         let products=res.products
+//         let pre=products.filter(item=>item.price>500)
+//         console.log(pre)
+//     })
+//})
+
+//reduce-----------------------------------------
+
+// let ar=[199,2999,99,199,]
+// //its accepts 2 para call back and starting point..call back accepts 2 parameter.by default it is 0.if it is 2,total+2
+// let tot=ar.reduce((accumulator,item)=>{return accumulator+item},0)//it acceps 2 valu  starting point and sum
+// // let tot=ar.reduce((accumulator,item)=>accumulator+item,0)
+// console.log(tot)
+
+// //in react u cant use for loops . so use maps 
+
+// $.get('https://dummyjson.com/posts',(res)=>{
+//     let posts=res.posts
+//     let container =document.getElementById('container')
+//     container.innerHTML+=posts.map(item=> `<h1>${item.title}</h1>`)
+//     $.get('https://dummyjson.com/products',(res)=>{
+//         let products=res.products
+//         let pre=products.filter(item=>item.price>500)
+//         console.log(pre)
+//         $.get('https://dummyjson.com/carts',(res)=>{
+//             let carts=res.carts
+//             console.log(carts)//answer was wrong .bcz hv to consider quantity
+//            let totalprice= carts.map(cart=>
+//             cart.products.reduce((acc,obj)=>{console.log(obj); return acc+ (obj.price*obj.quantity)},0)
+//             //cart.products.reduce((acc,obj)=>acc+ (obj.price*obj.quantity),0)
+//             )
+//             console.log(totalprice)
+//         })
+//     })
+// })
+// find and find index-------------------
+
+let arr2=[6,3,7,9,20,19,10,15]
+let val=arr2.find(item => item % 5 == 0)
+let val1=arr2.findIndex(item => item % 5 == 0)
+
+
+
+console.log(val1) //only 5 first occurence satisfying this is returm
+console.log(val) //only 5 or 20 first occurence satisfying this is returm
+
+
+// call back function 
+
+//a function tht is passed tto a higher order function is call back funtion.
+//y it is higher order function . bcz tht function pass argument as function.In JavaScript the code is executed line-by-line in a sequence so when we run a parallel operation or asynchronous operation like fetching data from backend, JavaScript doesn't waits for the response it simply executes the next line of code. So, we give the asynchronous operation a function to call when it is completed. This function is called a callback function.
+// For example,
+// $.get('some-url', callbackFunc);
+
+
+
+// nested call back
+/*The get() method provided by jquery is an asynchronous function. It runs in parallel to the main program flow. It sends a call to the backend and whenever the response is received, it runs the callback function. And it works perfectly fine.
+But now let's say, the call returns a list of IDs and you need to send another call to the backend to get details for a specific ID.
+How would you do it??
+You cannot write it after the get() method because you have no way of knowing when the response is received. So your only option is to put the details call inside the first callback function.
+
+the abve prgm is nested call back. once post is ready then  product is ready then moved to carts
+tht is called callbackhell. less readable more complex //
+ then promises comes to resolve
+
+A promise is used to handle the asynchronous result of an operation. What it does is, it defers the execution of a code block until an asynchronous request is completed. This way, other operations can keep running without interruption.
+
+A Promise have three states:
+Pending: This means the operation is going on.
+Fulfilled: This means the operation was completed.
+Rejected: The operation did not complete and an error can be thrown.
+
+
+*/
+const mypromise=new Promise((resolve,reject)=>{
+    $.get('https://dummyjson.com/posts',(res)=>{
+        resolve(res.posts)
+    })
+    .fail(()=>{
+        reject('cant fetch')
+    })
+   
+})
+console.log(mypromise) //fulfilled
+mypromise
+.then(res=>{console.log(res);//post response then promise chaining
+ $.get('https://dummyjson.com/products',(res)=>{
+        return res.products
+    })
+ })
+ .then(res=>console.log(res))
+.catch(err=>console.log(err))
+
+</script>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// var x=10
+// var x='abc'
+// var x=true 
+// //u dont get any errors 
+// console.log(x)//true
+
+// let  y=20 //it will throws error
+// let y='ed'
+
+// const c=100
+// c=9
+
+//hoisting----------------------------
+// console.log(y)
+// y=10;
+// var y;
+
+// if(val>10){
+//     let x=val
+//     console.log(val)
+// }
+// console.log(val) //not accessible
+// if(val>10){
+//     var x=val
+//     console.log(val)
+// }
+// console.log(val) // accessible
+// //so let and const are block level 
+// //var is function /global scope
+
+// function add(p,q){
+//     var sum=p+q
+//     console.log(sum)
+// }
+// add(10,20) //30
+// function add(p,q){
+//     var sum=p+q
+    
+// }
+// console.log(sum)
+// add(10,20) //sum is not defined,bcz sum is inside a func
+//   //-------------------------------------------------------------
+//   //arrow function old
+//   function demo(arg,arg1){
+
+//   }
+//   //arrow function new ()=>{}
+//   let demo1=(arg,arg1)=>{
+
+//   }  
+//   let sum=()=>{
+//     console.log('hjh')
+//   }
+//   let su=va=>va+10 //single line function get rid of vraces,curly,paranthesis
+//   console.log(su(100))
+//if the above is let hoisting doesn't wrk but if it is var hoisting wrk
+//template string---------------------------------------------------------------------------
+
+// var fs='sneha'
+// var c=`her name is ${fs}`
+//  //-----------spread and rest operator 
+//  let arr=[2,3,45,8]
+//  console.log(arr)//array format
+//  console.log(...arr) //present 
+
+// function any(a,b,...rest){
+// console.log(a,b,rest)
+// }
+// any(10,20,30,40,50,60,5,6,7)
+//rest it acceps n number of arguments and bind them(binding)
+ //spread if u wants to break the format of array(expanding)
+ //-------------------------------------------------
+
+ //destructuring helps to extract array elemnts and objects
+let abou={
+    'name':'sneha',
+    'age':90,
+    'clas':8,
+    'modules':['html','css','js']
+}
+let {clas,modules}=abou //dest
+console.log(clas)
+console.log(modules)
+
+let arr1=[1,2,4,6,7,8] 
+let[d,e,f]=arr1 //dest
+console.log(d,e,f)
+
+    </script>
+</body>
+</html>
